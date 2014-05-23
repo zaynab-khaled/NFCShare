@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/readTag"
+        android:icon="@drawable/icon_nfc_write"
+        android:title="@string/read_tag"
+        android:showAsAction="always" />
+	<group android:id="@+id/group1" > 
+	    <item
+	        android:id="@+id/menuOverFlow"
+	        android:icon="@drawable/ic_action_overflow"
+	        android:title="@string/overflow_icon"
+	        android:showAsAction="always" >
+		    <menu>
+			    <item
+			        android:id="@+id/action_filter"
+			        android:title="@string/title_filter"
+			        android:showAsAction="never" />
+		        
+			    <item
+			        android:id="@+id/action_deleteExpired"
+			        android:title="@string/title_deleteExpired"
+			        android:showAsAction="never" />
+				
+				<item
+			        android:id="@+id/action_about"
+			        android:title="@string/title_about"
+			        android:showAsAction="never" />
+			</menu>
+		</item>	
+	</group>
+    
+</menu>

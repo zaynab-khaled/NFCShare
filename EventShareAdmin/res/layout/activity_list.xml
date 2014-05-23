@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8ad5f0"
+    tools:context=".ListActivity"
+    android:orientation="vertical" >
+<!--android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"  -->
+
+	
+	<TextView 
+	    android:background="@color/grey" 
+	    android:layout_height="wrap_content" 
+	    android:layout_width="match_parent" 
+	    android:textSize="24sp"
+	    android:paddingTop="10dp" 
+	    android:id="@+id/tv_department" />
+	
+	<TextView
+	    android:id="@+id/tv_schedule"
+  		android:layout_width="match_parent"
+  		android:layout_height="wrap_content"
+  		android:textSize="20sp"
+  		android:paddingBottom="10dp"
+  		android:background="#eaeaea"/>
+	
+	<View 
+	      android:id="@+id/separator"
+	      android:layout_width="match_parent"
+	      android:layout_height="2dp"
+	      android:background="#50c0e9" />
+	
+	<ListView 
+	    android:id="@id/android:list"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:divider="#50c0e9"
+	    android:dividerHeight="2dp" />
+	
+	<View 
+	      android:id="@+id/separator"
+	      android:layout_width="match_parent"
+	      android:layout_height="2dp"
+	      android:background="#50c0e9" />
+	
+	<RelativeLayout
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content" >
+	       
+			<ImageView
+				android:id="@android:id/empty"
+				android:src="@drawable/arrow_start3"
+				android:contentDescription="@string/arrowDescription"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:visibility="gone"
+				android:layout_alignParentTop="true"
+				android:layout_centerHorizontal="true"/>
+	
+	</RelativeLayout>
+	    
+</LinearLayout>

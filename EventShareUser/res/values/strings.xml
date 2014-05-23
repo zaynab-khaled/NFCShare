@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NFC Share</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- For action bar -->
+    <string name="new_event">New Event</string>
+    <string name="overflow_icon">Open Menu</string>
+
+    <!-- Menu list -->
+    <string name="title_deleteExpired">Delete Declined Events</string>
+    <string name="title_erase">Erase Tag</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_about">About</string>
+    <string name="title_userList">NFC Share</string>
+    <string name="title_filter">Filter Events</string>
+    <string name="read_tag">Read from tag</string>
+
+    <!-- Pictures -->
+    <string name="pic_writetotag">Tap to write to tag.</string>
+    <string name="readtotag">Tap to read from tag.</string>
+    <string name="pic_erasecontent">Tap to erase all content on tag.\nThis may take up to a minute.</string>
+    <string name="imLoginDescription">Start off image</string>
+    <string name="arrowDescription">How to start using the app</string>
+    <string name="alarmClockDesc">Send a notification to remind you of an event</string>
+
+    <string name="about_title">NFC Share - User</string>
+    <string name="about_text1">NFC Share User lets the doctors of a hospital department easily retrieve and save the detailed operation schedule of their department by reading from a secure NFC tag.</string>
+    <string name="about_text2">NFC Share Users can view operation entries, filter entries according to doctor name, and set a notification for operations related to them.</string>
+    <string name="about_text4">NFC Share Users can also receive broadcast notifications sent by the admin of their department.</string>
+    <string name="about_dev">The Developers</string>
+    <string name="about_dev_text1">We are a team of graduating students from the AUST Information Technology College. Our main goal was to deliver a useful application that would integrate all our studies into one project.</string>
+    <string name="about_dev_text2">We hope that this project has been a success and that it achieves what it was aimed for; creating a paperless hospital environment by using the latest IT solutions.</string>
+    
+    <!-- For 'Cancel Done Menu' -->
+    <string name="title_cancel">Cancel</string>
+    <string name="title_done">Done</string>
+
+    <!-- For 'Edit Delete Menu' -->
+    <string name="title_edit">Edit</string>
+    <string name="title_delete">Delete</string>
+
+    <!-- For Text Field hints -->
+    <string name="hint_name">Event Name</string>
+    <string name="hint_loc">Event Location</string>
+    <string name="hint_desc">Description</string>
+
+    <!-- Detail Event Labels -->
+    <string name="label_date">Date:</string>
+    <string name="label_time">Time:</string>
+    <string name="label_title">Title:</string>
+    <string name="label_loc">Room:</string>
+    <string name="label_nameP">Patient:</string>
+    <string name="label_nameD">Doctor:</string>
+    <string name="label_desc">Info:</string>
+
+    <!-- Sections on Add Event Activity -->
+    <string name="section_EventDetails">Event Details</string>
+    <string name="section_EventTime">Event Date and Time</string>
+
+    <!-- Add Event Buttons -->
+    <string name="btn_Time">Time</string>
+    <string name="btn_Date">Date</string>
+
+    <!-- For single row list -->
+    <string name="lText">Large Text</string>
+    <string name="sText">Small Text</string>
+    
+    <string name="btn_register">Register</string>
+    <string name="hint_pass">Enter Password</string>
+    <string name="btnDepartment">Select Department</string>
+
+    <!-- For Spinners -->
+    <string-array name="arrayDepartments">
+        <item>Cardiology</item>
+        <item>Cancer Care Unit</item>
+        <item>Dermatology</item>
+        <item>Diabetology</item>
+        <item>Digestive Diseases</item>
+        <item>Medical ICU</item>
+        <item>Surgical ICU</item>
+        <item>Neurology</item>
+        <item>Orthopedics</item>
+        <item>Pediatric</item>
+        <item>Plastic Surgery</item>
+    </string-array>
+    
+	<string-array name="arrayFilterN">
+		<item>Dr. Suhail Al Rukn</item>
+        <item>Dr. Abubaker Almadani</item>
+        <item>Dr. Mohammed Saadah</item>
+        <item>Dr. Suresh Nair</item>
+        <item>Dr. Ayman Alboudi</item>
+        <item>Dr. Mohamed Hamdy Ibrahim</item>
+        <item>Dr. Zulfa Omar Deesi</item>
+        <item>Dr. Fahad Omar Baslaib</item>
+        <item>Select All</item>
+    </string-array>
+    
+	<string-array name="arrayFilterC">
+        <item>Dr. Moosa Kunhi</item>
+        <item>Dr. Ehab Moheyeldin</item>
+        <item>Dr. Ani Purushothaman</item>
+        <item>Dr. Mais M Mauwfak</item>
+        <item>Dr. Mohamed Ahmed</item>
+        <item>Dr. Omaia Siddig Bashir</item>
+        <item>Select All</item>
+    </string-array>
+
+    <!-- Automatic for manifest, change title on screen -->
+    <string name="title_activity_add_event">Add Event</string>
+    <string name="title_activity_read_tag">Read tag</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_password_tag">Change Password</string>
+    <string name="title_activity_event_details">Event Details</string>
+    <string name="title_activity_edit">Edit</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_main">Main Activity</string>
+
+</resources>

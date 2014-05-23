@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:isScrollContainer="true"
+    android:background="@color/grey"
+    tools:context=".AddEventActivity" >
+
+<ScrollView
+		android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        
+   <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <TextView
+		    android:id="@+id/section_EventDetails"
+		    style="?android:attr/listSeparatorTextViewStyle"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="15sp"
+		    android:textColor="#50c0e9"
+		    android:divider="#50c0e9"
+		    android:dividerHeight="2dp"
+		    android:text="@string/section_EventDetails"/>
+        
+	    <EditText
+	        android:id="@+id/editText_operationTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:maxLength="32"
+	        android:paddingBottom="13dp"
+	        android:inputType="textCapWords|textNoSuggestions"
+	        android:hint="@string/hint_title" />
+	    
+        <Button
+            android:id="@+id/btn_doctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            style="?android:attr/spinnerStyle"
+            android:textSize="18sp"
+            android:textAlignment="gravity"
+            android:paddingLeft="10dp"
+            android:text="@string/btn_doctor" />
+	
+	    	    
+	    <EditText
+	        android:id="@+id/editText_patientName"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="13dp"
+	        android:paddingTop="10dp"
+	        android:maxLength="32"
+	        android:inputType="textCapWords|textNoSuggestions"
+	        android:hint="@string/hint_pName" />
+	
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            style="?android:attr/spinnerStyle"
+            android:textSize="18sp"
+            android:paddingLeft="10dp"
+            android:text="@string/btn_location" />
+
+	    <EditText
+		    android:id="@+id/editText_operationDesc"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingTop="5dp"
+			android:inputType="textCapSentences|textNoSuggestions"
+			android:maxLength="65"
+			android:maxLines="2"
+			android:paddingBottom="13dp"
+		    android:hint="@string/hint_addInfo" />
+
+		<TextView
+		    android:id="@+id/section_EventTime"
+		    style="?android:attr/listSeparatorTextViewStyle"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="15sp"
+		    android:layout_marginBottom="15sp"
+		    android:textColor="#50c0e9"
+		    android:divider="#50c0e9"
+		    android:dividerHeight="2dp"
+		    android:text="@string/section_EventTime" />
+
+		<Button
+		    android:id="@+id/btnDate1"
+		    style="?android:attr/spinnerStyle"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:textSize="18sp"
+		     android:paddingLeft="11dp"
+            android:paddingTop="5dp"
+		    android:text="@string/btn_Date" />
+		
+	 	
+		<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal" >
+	        
+	    <Button
+	        android:id="@+id/btnTime1"
+	        style="?android:attr/spinnerStyle"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:textSize="18sp"
+	        android:paddingLeft="11dp"
+            android:paddingTop="5dp"
+	        android:text="@string/btn_FromTime" />
+
+	    <Button
+	        android:id="@+id/btnTime2"
+	        style="?android:attr/spinnerStyle"
+	        android:layout_width="100dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:textSize="18sp"
+	        android:paddingLeft="11dp"
+            android:paddingTop="5dp"
+	        android:text="@string/btn_ToTime" />
+  
+	 	</LinearLayout>
+	
+
+
+	</LinearLayout>
+</ScrollView>
+</RelativeLayout>

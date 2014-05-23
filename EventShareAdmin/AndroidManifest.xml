@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ajman.university.grad.project.eventshare.admin"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:name="ajman.university.grad.project.eventshare.admin.AdminApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_custom"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.ListActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.EventActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.WriteToTagActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_write_to_tag"
+            android:parentActivityName="ajman.university.grad.project.eventshare.admin.ListActivity" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.EraseTagActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_erase"
+            android:parentActivityName="ajman.university.grad.project.eventshare.admin.ListActivity" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.AboutActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="ajman.university.grad.project.eventshare.admin.ListActivity" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.PasswordTagActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_password_tag"
+            android:parentActivityName="ajman.university.grad.project.eventshare.admin.ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ajman.university.grad.project.eventshare.admin.MainActivity" />
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.DetailEventActivity"
+            android:configChanges="orientation|screenSize"
+            android:label=""
+            android:parentActivityName="ajman.university.grad.project.eventshare.admin.ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ajman.university.grad.project.eventshare.admin.MainActivity" />
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.admin.MessageActivity"
+            android:label="" >
+        </activity>
+        
+        <service android:name="ajman.university.grad.project.eventshare.common.system.services.CronService" >
+        </service>
+        
+    </application>
+
+</manifest>

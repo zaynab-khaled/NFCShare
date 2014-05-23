@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ajman.university.grad.project.eventshare.user"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.NFC" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	 
+	<!--
+	  IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+	  to match your app's package name + ".permission.C2D_MESSAGE".
+	-->
+	<permission android:protectionLevel="signature"
+	    android:name="ajman.university.grad.project.eventshare.user.permission.C2D_MESSAGE" />
+	<uses-permission android:name="ajman.university.grad.project.eventshare.user.permission.C2D_MESSAGE" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:name="ajman.university.grad.project.eventshare.user.UserApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_custom"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+"C:/Users/Yusra/AppData/Local/Temp/Rar$DR01.058/EventShare/EventShareUser/AndroidManifest.xml"
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.ReadTagActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_read_tag"
+            android:parentActivityName="ajman.university.grad.project.eventshare.user.ListActivity" >
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/filter_nfc" />
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.DetailEventActivity"
+            android:configChanges="orientation|screenSize"
+            android:label=""
+            android:parentActivityName="ajman.university.grad.project.eventshare.user.ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ajman.university.grad.project.eventshare.user.MainActivity" />
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.RegisterActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.ListActivity"
+            android:label="@string/title_userList" >
+        </activity>
+
+        <activity
+            android:name="ajman.university.grad.project.eventshare.user.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="ajman.university.grad.project.eventshare.user.ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ajman.university.grad.project.eventshare.user.ListActivity" />
+        </activity>
+        
+        <service android:name="ajman.university.grad.project.eventshare.common.system.services.CronService" >
+        </service>
+
+        <!-- Parse stuff -->
+		<service android:name="com.parse.PushService" />
+		<receiver android:name="com.parse.ParseBroadcastReceiver">
+		  <intent-filter>
+		    <action android:name="android.intent.action.BOOT_COMPLETED" />
+		    <action android:name="android.intent.action.USER_PRESENT" />
+		  </intent-filter>
+		</receiver>
+		<receiver android:name="com.parse.GcmBroadcastReceiver"
+		    android:permission="com.google.android.c2dm.permission.SEND">
+		  <intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		 
+		    <!--
+		      IMPORTANT: Change "com.parse.starter" to match your app's package name.
+		    -->
+		    <category android:name="ajman.university.grad.project.eventshare.user" />
+		  </intent-filter>
+		</receiver>
+    </application>
+
+</manifest>
