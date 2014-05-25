@@ -27,9 +27,7 @@ public class EventsAdapter extends BaseAdapter implements OnClickListener {
 	private List<Event> events = new ArrayList<Event>();
 	private Context context;
 	private int nrOfValidEvents;
-	private final static int tagSize = (256 - 40) * 16;
 
-	// (nr of block - trailer blocks) * block size = 3456 bytes;
 	private ILocalStorageService service = ServicesFactory.getLocalStorageService();
 	private IEventsAdapterManager myManager;
 	private String docName = null;
@@ -76,6 +74,9 @@ public class EventsAdapter extends BaseAdapter implements OnClickListener {
 		fromCal.set(Calendar.MINUTE, event.getFromMinute());
 
 		Calendar toCal = Calendar.getInstance();
+		toCal.set(Calendar.YEAR, event.getFromYear());
+		toCal.set(Calendar.MONTH, event.getFromMonth());
+		toCal.set(Calendar.DAY_OF_MONTH, event.getFromDay());
 		toCal.set(Calendar.HOUR_OF_DAY, event.getToDayHour());
 		toCal.set(Calendar.MINUTE, event.getToMinute());
 		View row;
@@ -150,71 +151,6 @@ public class EventsAdapter extends BaseAdapter implements OnClickListener {
 		}
 	}
 
-	// Final format should be 20140924185545
-	private String formatToDate(Event event) {
-		String date = "";
-		date += event.getFromYear();
-		date += (event.getFromMonth() < 10 ? "0" + (event.getFromMonth() + 1) : event.getFromMonth() + 1);
-		date += (event.getFromDay() < 10 ? "0" + event.getFromDay() : event.getFromDay());
-		date += (event.getToDayHour() < 10 ? "0" + event.getToDayHour() : event.getToDayHour());
-		date += (event.getToMinute() < 10 ? "0" + event.getToMinute() : event.getToMinute());
-		date += "00";
-		return date;
-	}
-
-	private String formatFromDate(Event event) {
-		String date = "";
-		date += event.getFromYear();
-		date += (event.getFromMonth() < 10 ? "0" + (event.getFromMonth() + 1) : event.getFromMonth() + 1);
-		date += (event.getFromDay() < 10 ? "0" + event.getFromDay() : event.getFromDay());
-		date += (event.getFromDayHour() < 10 ? "0" + event.getFromDayHour() : event.getFromDayHour());
-		date += (event.getFromMinute() < 10 ? "0" + event.getFromMinute() : event.getFromMinute());
-		date += "00";
-		return date;
-	}
-
-	@Override
-	public String toString() {
-		String vCal = "";
-		String vCalPrev = "";
-		String vEvent = "";
-		nrOfValidEvents = 0;
-
-		vCal += "<c>";
-
-		for (int i = 0; i < events.size(); i++) {
-			if (!isDeclined(events.get(i))) {
-				vEvent = "<e>";
-				vEvent += "<s>" + formatFromDate(events.get(i)) + "</s>";
-				vEvent += "<f>" + formatToDate(events.get(i)) + "</f>";
-				vEvent += "<t>" + events.get(i).getTitle() + "</t>";
-				vEvent += "<a>" + events.get(i).getDepartment() + "</a>";
-				vEvent += "<d>" + events.get(i).getDescription() + "</d>";
-				vEvent += "<o>" + events.get(i).getNameDoc() + "</o>";
-				vEvent += "<p>" + events.get(i).getNamePat() + "</p>";
-				vEvent += "<i>" + events.get(i).getId() + "</i>";
-				vEvent += "<l>" + events.get(i).getLocation() + "</l>";
-				vEvent += "</e>";
-
-				vCal += vEvent;
-
-				if (vCal.getBytes().length < (tagSize - "</c>".getBytes().length)) {
-					vCalPrev = vCal;
-					nrOfValidEvents++;
-					System.out.println("nrofevents = " + nrOfValidEvents);
-					System.out.println("size = " + vCal.getBytes().length + " bytes");
-				}
-				else {
-					vCal = vCalPrev;
-					break;
-				}
-			}
-		}
-
-		vCal += "</c>";
-		return vCal;
-	}
-
 	private boolean isDeclined(Event event) {
 
 		Calendar toCal = Calendar.getInstance();
@@ -236,7 +172,7 @@ public class EventsAdapter extends BaseAdapter implements OnClickListener {
 		return nrOfValidEvents;
 	}
 	
-	private void refreshAdapter () {
+	private void refreshAdapter() {
 		events = new ArrayList<Event>();
 
 		try {

@@ -64,8 +64,8 @@ public class FakeNfcTagService implements ITagService{
 		event.setFromYear(2014);
 		event.setFromDayHour(10);
 		event.setFromMinute(35);
-		event.setToDayHour(15);
-		event.setToMinute(56);
+		event.setToDayHour(5);
+		event.setToMinute(00);
 		event.setAlarmable(false);
 		event.setExpired(false);
 		readEvents.add(event);

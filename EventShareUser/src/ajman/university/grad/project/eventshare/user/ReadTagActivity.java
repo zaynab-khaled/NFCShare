@@ -3,7 +3,6 @@ package ajman.university.grad.project.eventshare.user;
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -40,7 +39,7 @@ import android.widget.Toast;
 public class ReadTagActivity extends Activity {
 
 	private ILocalStorageService localStorageService = ServicesFactory.getLocalStorageService();
-	private ITagService fakeTagService = ServicesFactory.getFakeNfcTagService();
+	//private ITagService fakeTagService = ServicesFactory.getFakeNfcTagService();
 	private IErrorService errorService = ServicesFactory.getErrorService();
 
 	static String separator = System.getProperty("line.separator");
@@ -63,14 +62,11 @@ public class ReadTagActivity extends Activity {
 		getActionBar().setDisplayShowTitleEnabled(true);
 
 		// Get Fake events to test the functionality without actual NFC tags
-		List<Event> events = fakeTagService.readEvents();
-		for (Event event : events) {
-			try {
-				localStorageService.addEvent(event);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+		/*
+		 * List<Event> events = fakeTagService.readEvents(); for (Event event :
+		 * events) { try { localStorageService.addEvent(event); } catch
+		 * (Exception e) { e.printStackTrace(); } }
+		 */
 
 		mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
@@ -253,19 +249,17 @@ public class ReadTagActivity extends Activity {
 					event.setFromDayHour(cal.get(Calendar.HOUR_OF_DAY));
 					System.out.println("FromHour: " + cal.get(Calendar.HOUR_OF_DAY));
 
-					event.setFromDayHour(cal.get(Calendar.MINUTE));
+					event.setFromMinute(cal.get(Calendar.MINUTE));
 					System.out.println("Fromminute: " + cal.get(Calendar.MINUTE));
 
 					attr = (Element) ((Element) nodes.item(i)).getElementsByTagName("f").item(0);
 					cal.setTime(sdf.parse(getCharacterDataFromElement(attr)));
 
 					event.setToDayHour(cal.get(Calendar.HOUR_OF_DAY));
-					// System.out.println("ToHour: " +
-					// cal.get(Calendar.HOUR_OF_DAY));
+					System.out.println("ToHour: " + cal.get(Calendar.HOUR_OF_DAY));
 
-					event.setToDayHour(cal.get(Calendar.MINUTE));
-					// System.out.println("Tominute: " +
-					// cal.get(Calendar.MINUTE));
+					event.setToMinute(cal.get(Calendar.MINUTE));
+					System.out.println("Tominute: " + cal.get(Calendar.MINUTE));
 
 					localStorageService.addEvent(event);
 				}

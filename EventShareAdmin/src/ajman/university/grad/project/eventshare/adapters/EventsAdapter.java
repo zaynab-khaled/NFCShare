@@ -77,6 +77,9 @@ public class EventsAdapter extends BaseAdapter {
 		fromCal.set(Calendar.MINUTE, event.getFromMinute());
 		
 		Calendar toCal = Calendar.getInstance();
+		toCal.set(Calendar.YEAR, event.getFromYear());
+		toCal.set(Calendar.MONTH, event.getFromMonth());
+		toCal.set(Calendar.DAY_OF_MONTH, event.getFromDay());
 		toCal.set(Calendar.HOUR_OF_DAY, event.getToDayHour());
 		toCal.set(Calendar.MINUTE, event.getToMinute());
 		View row;
@@ -165,6 +168,7 @@ public class EventsAdapter extends BaseAdapter {
 		}
 		
 		vCal += "</c>";
+		System.out.println(vCal);
 		return vCal;
 	}
 

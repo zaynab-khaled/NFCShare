@@ -105,7 +105,9 @@ public class EventsDataSource {
 		Log.d(LOG_TAG, "retrieveAll: " + Environment.getDataDirectory());
 		List<Event> events = new ArrayList<Event> ();
 		Cursor cursor = null;
-		String orderBy = EventsSqlLiteHelper.COLUMN_FROM_YEAR + "," + EventsSqlLiteHelper.COLUMN_FROM_MONTH + "," +  EventsSqlLiteHelper.COLUMN_FROM_DAY + "," +  EventsSqlLiteHelper.COLUMN_TO_DAY_HOUR + "," +  EventsSqlLiteHelper.COLUMN_TO_MINUTE + "," + EventsSqlLiteHelper.COLUMN_FROM_DAY_HOUR + "," + EventsSqlLiteHelper.COLUMN_TO_MINUTE;
+		String orderBy = EventsSqlLiteHelper.COLUMN_FROM_YEAR + "," + EventsSqlLiteHelper.COLUMN_FROM_MONTH + "," +  EventsSqlLiteHelper.COLUMN_FROM_DAY + "," +  EventsSqlLiteHelper.COLUMN_TO_DAY_HOUR + "," +  EventsSqlLiteHelper.COLUMN_TO_MINUTE 
+				//+ "," + EventsSqlLiteHelper.COLUMN_FROM_DAY_HOUR + "," + EventsSqlLiteHelper.COLUMN_TO_MINUTE
+				;
 		
 		try {
 			//cursor = database.query(EventsSqlLiteHelper.TABLE_EVENTS, allColumns, null, null, orderBy, null, EventsSqlLiteHelper.COLUMN_TITLE, "" + records);
@@ -129,7 +131,9 @@ public class EventsDataSource {
 			Log.d(LOG_TAG, "retrieveByDoctorName: " + Environment.getDataDirectory());
 			List<Event> events = new ArrayList<Event> ();
 			Cursor cursor = null;
-			String orderBy = EventsSqlLiteHelper.COLUMN_FROM_YEAR + "," + EventsSqlLiteHelper.COLUMN_FROM_MONTH + "," +  EventsSqlLiteHelper.COLUMN_FROM_DAY + "," +  EventsSqlLiteHelper.COLUMN_FROM_DAY_HOUR + "," +  EventsSqlLiteHelper.COLUMN_FROM_MINUTE;
+			String orderBy = EventsSqlLiteHelper.COLUMN_FROM_YEAR + "," + EventsSqlLiteHelper.COLUMN_FROM_MONTH + "," +  EventsSqlLiteHelper.COLUMN_FROM_DAY + "," 
+			//+  EventsSqlLiteHelper.COLUMN_FROM_DAY_HOUR + "," +  EventsSqlLiteHelper.COLUMN_FROM_MINUTE;
+			+  EventsSqlLiteHelper.COLUMN_TO_DAY_HOUR + "," +  EventsSqlLiteHelper.COLUMN_TO_MINUTE;
 			
 			try {
 				//cursor = database.query(EventsSqlLiteHelper.TABLE_EVENTS, allColumns, null, null, orderBy, null, EventsSqlLiteHelper.COLUMN_TITLE, "" + records);
